@@ -3,7 +3,7 @@
 # Подсказка: используйте метод list.pop()
 
 def find_person(names, find_name):
-    while len(names) > 0:
+    while names:
         name = names.pop()
         if name == find_name:
             return "{} нашелся!".format(name)

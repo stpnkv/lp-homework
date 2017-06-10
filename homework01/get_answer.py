@@ -10,8 +10,7 @@ def get_answer(question):
         'how are you?': 'Great, how are you?', 
         'see you soon': 'You too'
     }
-    default_answer = ':)'
-    return answer.get(question.lower(), default_answer)
+    return answer[question.lower()]
 
 def ask_user():
     user_question = input("What is your question? [Bye] ")
@@ -21,11 +20,13 @@ def ask_user():
     return True
 
 if __name__ == "__main__":
-while True:
-    try:
-        if not ask_user():
-            print("Bye, bye")
+    while True:
+        try:
+            if not ask_user():
+                print("Bye, bye")
+                break
+        except KeyboardInterrupt:
+            print("\n", "Bye, bye")
             break
-    except KeyboardInterrupt:
-        print("\n", "Bye, bye")
-        break
+        except KeyError:
+            print("I don't have an answer to this")
