@@ -19,7 +19,7 @@ school_classes = [
 
 for i in school_classes:
     random_grades = []
-    for _ in list(range(1,11)):
+    for _ in range(10):
         random_grades.append(randint(2,5))
     i["grades"] = random_grades
 

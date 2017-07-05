@@ -10,7 +10,10 @@ def get_answer(question):
         'how are you?': 'Great, how are you?', 
         'see you soon': 'You too'
     }
-    return answer[question.lower()]
+    try:
+        return answer[question.lower()]
+    except KeyError:
+        return "I don't have an answer to this"
 
 def ask_user():
     user_question = input("What is your question? [Bye] ")
@@ -19,7 +22,7 @@ def ask_user():
     print(get_answer(user_question))
     return True
 
-if __name__ == "__main__":
+def main():
     while True:
         try:
             if not ask_user():
@@ -28,5 +31,7 @@ if __name__ == "__main__":
         except KeyboardInterrupt:
             print("\n", "Bye, bye")
             break
-        except KeyError:
-            print("I don't have an answer to this")
+
+if __name__ == "__main__":
+    main()
+        
