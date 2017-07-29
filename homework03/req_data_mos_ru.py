@@ -12,7 +12,4 @@ if __name__ == "__main__":
     api_url = "http://api.data.mos.ru/v1/datasets/2009/rows?api_key={}".format(settings.DATA_MOS_RU_API_KEY)
     data = get_data(api_url)
 
-    for element in data:
-        print(element)
-        print(element["Cells"]["Name"])
-        break
+    print(data[1])

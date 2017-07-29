@@ -1,25 +1,21 @@
 <!DOCTYPE html>
-<html lang = "en">
     <head>
-    <style>
-        table, th, td {
-            border: 1px solid black;
-            border-collapse: collapse;
-        }
-        th, td {
-            padding: 5px;
-        }
-    </style>
+        <title>My webpage</title>
+        <meta charset="utf8" />
+        <link rel="stylesheet" href="/static/css/main.css"></link>
     </head>
-    <h1>
-        <!--caption-->
-    </h1>
-    <table>
-        <tr>
-            <td><b>Date</b></td>
-            <td><b>Name</b></td>
-            <td><b>Number</b></td>
-        </tr>
-            <!--contents-->
-    </table>
+    <body>
+        {% include "none.html" ignore missing %}
+        <h1>
+            <!--caption-->
+        </h1>
+        <table>
+            <tr>
+                <th>Date</th>
+                <th>Name</th>
+                <th>Number</th>
+            </tr>
+                <!--contents-->
+        </table>
+    </body>    
 </html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+    <head>
+        <title>{{ page_name }}</title>
+        <meta charset="utf8" />
+        <link rel="stylesheet" href="/static/css/main.css"></link>
+    </head>
+    <body>
+        <h1>{{ page_title }}</h1>
+        <p>
+            Data <a href="https://data.mos.ru/opendata/7704111479-svedeniya-o-naibolee-populyarnyh-jenskih-imenah-sredi-novorojdennyh">source</a>
+        </p>
+        <p>
+            {{ available_years }}
+        <br>
+            by passing the year in the url, like this "/?year=2016"
+        </p>
+        <table>
+            <tr>
+                <th>Date</th>
+                <th>Name</th>
+                <th>Number</th>
+            </tr>
+                {% for row in table_data %}
+                    <tr>
+                        <td>{{ row["Date"] }}</td>
+                        <td>{{ row["Name"] }}</td>
+                        <td>{{ row["NumberOfPersons"] }}</td>
+                    </tr>
+                {% endfor %}
+        </table>
+    </body>    
+</html>

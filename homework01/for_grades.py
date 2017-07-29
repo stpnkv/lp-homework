@@ -17,19 +17,20 @@ school_classes = [
     {"name": "11c", "grades": []}
 ]
 
-for i in school_classes:
+for school_class in school_classes:
     random_grades = []
     for _ in range(10):
-        random_grades.append(randint(2,5))
-    i["grades"] = random_grades
+        random_grades.append(randint(3,5))
+    school_class["grades"] = random_grades
 
 print("Average grades per class")
 all_grades = []
-for i in school_classes:
-    class_name = i.get("name")
-    class_grades = i.get("grades")
+for school_class in school_classes:
+    class_name = school_class.get("name")
+    class_grades = school_class.get("grades")
     all_grades.append(mean(class_grades))
-    print("{}: {}: {}".format(class_name, class_grades, mean(class_grades)))
+    print("{}: {}: {:.2f}".format(class_name, class_grades, mean(class_grades)))
 
 print("Average grade per school")
-print(str(mean(all_grades)))
+print("{:.2f}".format(mean(all_grades)))
+
